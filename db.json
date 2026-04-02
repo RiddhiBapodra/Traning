@@ -1,39 +1,64 @@
 {
-  "users": [
+  "tasks": [
     {
       "id": 1,
-      "name": "John Doe",
-      "email": "john@example.com",
-      "password": "123456",
-      "role": "USER"
+      "title": "Learn React basics",
+      "description": "Understand components, props, and state",
+      "completed": false
     },
     {
       "id": 2,
-      "name": "Alice Smith",
-      "email": "alice@example.com",
-      "password": "abcdef",
-      "role": "USER"
+      "title": "Build Login Page",
+      "description": "Create login UI and validation",
+      "completed": true
     },
     {
       "id": 3,
-      "name": "Bob Admin",
-      "email": "admin@example.com",
-      "password": "admin123",
-      "role": "ADMIN"
+      "title": "Setup JSON Server",
+      "description": "Install and run fake backend",
+      "completed": false
     },
     {
       "id": 4,
-      "name": "Jane Doe",
-      "email": "jane@example.com",
-      "password": "password1",
-      "role": "USER"
+      "title": "Create Dashboard UI",
+      "description": "Design layout with header and cards",
+      "completed": false
     },
     {
       "id": 5,
-      "name": "Michael Clark",
-      "email": "michael@example.com",
-      "password": "mike2026",
-      "role": "USER"
+      "title": "Implement Add Task",
+      "description": "Add new task using form",
+      "completed": true
+    },
+    {
+      "id": 6,
+      "title": "Implement Delete Task",
+      "description": "Delete task using API",
+      "completed": false
+    },
+    {
+      "id": 7,
+      "title": "Implement Edit Task",
+      "description": "Update task using PATCH API",
+      "completed": false
+    },
+    {
+      "id": 8,
+      "title": "Add Pagination",
+      "description": "Show limited tasks per page",
+      "completed": false
+    },
+    {
+      "id": 9,
+      "title": "Style with Tailwind",
+      "description": "Improve UI design",
+      "completed": true
+    },
+    {
+      "id": 10,
+      "title": "Test Application",
+      "description": "Check all features and fix bugs",
+      "completed": false
     }
   ]
 }
