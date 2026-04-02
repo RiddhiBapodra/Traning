@@ -1,1 +1,39 @@
-{}
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "123456",
+      "role": "USER"
+    },
+    {
+      "id": 2,
+      "name": "Alice Smith",
+      "email": "alice@example.com",
+      "password": "abcdef",
+      "role": "USER"
+    },
+    {
+      "id": 3,
+      "name": "Bob Admin",
+      "email": "admin@example.com",
+      "password": "admin123",
+      "role": "ADMIN"
+    },
+    {
+      "id": 4,
+      "name": "Jane Doe",
+      "email": "jane@example.com",
+      "password": "password1",
+      "role": "USER"
+    },
+    {
+      "id": 5,
+      "name": "Michael Clark",
+      "email": "michael@example.com",
+      "password": "mike2026",
+      "role": "USER"
+    }
+  ]
+}
