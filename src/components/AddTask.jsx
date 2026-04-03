@@ -1,19 +1,21 @@
 import { useState } from "react";
 
 const AddTask = ({ onAddTask }) => {
-  const [title, setTitle] = useState("");
+  const [data, setData] = useState({ title: "", description: "" });
 
   const handleSubmit = () => {
-    if (!title) return;
+    if (!data.title || !data.description) return;
 
     const newTask = {
       id: Date.now(),
-      title: title,
+      title: data.title,
+      description: data.description,
       completed: false
     };
 
-    onAddTask(newTask); // 🔥 send data to Dashboard
-    setTitle("");
+    // send newTask to the dashboard component
+    onAddTask(newTask); 
+    setData({ title: "", description: "" });
   };
 
   return (
@@ -21,8 +23,16 @@ const AddTask = ({ onAddTask }) => {
       <input
         type="text"
         placeholder="Enter task..."
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        value={data.title}
+        onChange={(e) => setData({...data, title: e.target.value})}
+        className="border p-2 mr-2"
+      />
+
+      <input
+        type="text"
+        placeholder="Enter task description..."
+        value={data.description}
+        onChange={(e) => setData({...data, description: e.target.value})}
         className="border p-2 mr-2"
       />
 
