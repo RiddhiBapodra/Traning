@@ -7,6 +7,7 @@ import {getApiServices} from './ApiServices/ApiServices'
 import { useNavigate } from 'react-router-dom'
 
 const Dashboard = () => {
+  const navigate = useNavigate();
 
     const [tasks , setTasks] = useState([]);
     const [editTask , setEditTask] = useState(null);
@@ -57,6 +58,8 @@ const Dashboard = () => {
 };
 
 
+
+
     const handleEditTask = (task) => {
       setEditTask(task);
       setShowForm(false);
@@ -76,7 +79,35 @@ const Dashboard = () => {
       }
        
     }
-    const navigate = useNavigate();
+
+    const handleDeleteTask = async (id) => {
+      try{
+        console.log("Deleting task ID:", id, typeof id); 
+        const res = await getApiServices.delete(`/tasks/${id}`);
+        setTasks((prev) => prev.filter((task) => task.id !== id));
+
+
+
+      }catch (error)
+      {
+        console.error("Error deleting task:", error);
+      }
+    }
+
+    const handleCompleteTask = async (task) => {
+  try {
+    const updatedTask = { ...task, completed: true };
+    await getApiServices.put(`/tasks/${task.id}`, updatedTask);
+
+    // Update UI
+    setTasks((prev) =>
+      prev.map((t) => (t.id === task.id ? updatedTask : t))
+    );
+  } catch (error) {
+    console.error("Error completing task:", error);
+  }
+};
+    
 
     const LogOut = () => {
        localStorage.removeItem("isLoggedIn"); 
@@ -90,6 +121,7 @@ const Dashboard = () => {
       
      
       <button
+        type="button"
         onClick={() => setShowForm(true)}
         className="bg-blue-500 text-white px-4 py-2"
       >
@@ -109,7 +141,7 @@ const Dashboard = () => {
   />
 )}
 
-      <TaskList tasks={tasks} onEdit = {handleEditTask} />
+      <TaskList tasks={tasks} onEdit = {handleEditTask} onDelete = {handleDeleteTask}  onComplete = {handleCompleteTask}/>
       
     </div>
   )

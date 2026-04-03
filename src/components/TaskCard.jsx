@@ -1,4 +1,4 @@
-const TaskCard = ({ task ,onEdit}) => {
+const TaskCard = ({ task ,onEdit , onDelete , onComplete }) => {
   return (
     <div className="border p-4 rounded-lg shadow mb-3 bg-white">
       <h3 className="text-lg font-semibold">{task.title}</h3>
@@ -9,17 +9,21 @@ const TaskCard = ({ task ,onEdit}) => {
       </p>
 
       <div className="mt-2 flex gap-2">
-        <button  className="bg-yellow-400 px-2 py-1 rounded" onClick={() => onEdit(task)}>
+        <button type="button" className="bg-yellow-400 px-2 py-1 rounded" onClick={() => onEdit(task)}>
           Edit
         </button>
 
-        <button className="bg-red-500 text-white px-2 py-1 rounded">
+        <button type="button" className="bg-red-500 text-white px-2 py-1 rounded" onClick={() => onDelete(task.id)}>
           Delete
         </button>
 
-        <button className="bg-green-500 text-white px-2 py-1 rounded">
-          Complete
-        </button>
+        <button
+  className="bg-green-500 text-white px-2 py-1 rounded"
+  onClick={() => onComplete(task)}
+  disabled={task.completed}
+>
+  {task.completed ? "Completed" : "Complete"}
+</button>
       </div>
     </div>
   );

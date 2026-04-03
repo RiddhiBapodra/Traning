@@ -10,7 +10,8 @@ const UpdateTask = ({task , onUpdateTask , onCancel}) => {
         }
     },[task]);
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         console.log("button clicked");
         if(data.title === "" || data.description === "") return;
 
@@ -45,6 +46,7 @@ const UpdateTask = ({task , onUpdateTask , onCancel}) => {
 
     <div className="flex gap-3">
       <button
+        type='button'
         onClick={handleSubmit}
         className="bg-green-500 text-white px-4 py-2 rounded"
       >
@@ -52,6 +54,7 @@ const UpdateTask = ({task , onUpdateTask , onCancel}) => {
       </button>
 
       <button
+        type='button'
         onClick={onCancel}
         className="bg-gray-400 text-white px-4 py-2 rounded"
       >

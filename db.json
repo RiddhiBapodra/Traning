@@ -1,40 +1,10 @@
 {
   "tasks": [
     {
-      "id": "1",
-      "title": "Learn React ",
-      "description": "Understand components, props, and state",
-      "completed": false
-    },
-    {
-      "id": "2",
-      "title": "Build Login Page",
-      "description": "Create login UI and validation",
-      "completed": true
-    },
-    {
-      "id": "3",
-      "title": "Setup JSON Server",
-      "description": "Install and run fake backend",
-      "completed": false
-    },
-    {
-      "id": "4",
-      "title": "Create Dashboard UI",
-      "description": "Design layout with header and cards",
-      "completed": false
-    },
-    {
-      "id": "5",
-      "title": "Implement Add Task",
-      "description": "Add new task using form",
-      "completed": true
-    },
-    {
       "id": "6",
       "title": "Implement Delete Task",
       "description": "Delete task using API",
-      "completed": false
+      "completed": true
     },
     {
       "id": "7",
@@ -75,12 +45,6 @@
       "id": "A_6-YOvsTmU",
       "title": "laerning react",
       "description": "learning react",
-      "completed": false
-    },
-    {
-      "id": "zSU6260J2zw",
-      "title": "setup project structure",
-      "description": "creating a project structure in react and manage them",
       "completed": false
     }
   ],
